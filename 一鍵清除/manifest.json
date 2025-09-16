@@ -1,0 +1,23 @@
+{
+  "manifest_version": 3,
+  "name": "一鍵清除",
+  "version": "1.0",
+  "description": "一鍵清除瀏覽器快取、檔案和瀏覽紀錄",
+  "permissions": ["browsingData"],
+  "action": {
+    "default_icon": {
+      "16": "icon.png",
+      "32": "icon.png"
+    },
+    "default_title": "一鍵清除"
+  },
+  "icons": {
+    "16": "icon.png",
+    "32": "icon.png",
+    "48": "icon.png",
+    "128": "icon.png"
+  },
+  "background": {
+    "service_worker": "background.js"
+  }
+}
