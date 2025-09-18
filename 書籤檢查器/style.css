@@ -1,0 +1,211 @@
+/* --- Color Variables --- */
+:root {
+  --bg-color: #ffffff;
+  --text-color: #333333;
+  --text-color-secondary: #555555;
+  --border-color: #eeeeee;
+  --border-color-strong: #cccccc;
+  --button-bg-color: #f0f0f0;
+  --button-text-color: #212529;
+  --button-border-color: #cccccc;
+  --danger-bg-color: #d9534f;
+  --danger-border-color: #d43f3a;
+  --danger-text-color: #ffffff;
+  --link-color: #007bff;
+  --header-bg-color: #f7f7f7;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg-color: #2b2b2b;
+    --text-color: #e0e0e0;
+    --text-color-secondary: #aaaaaa;
+    --border-color: #444444;
+    --border-color-strong: #555555;
+    --button-bg-color: #4f4f4f;
+    --button-text-color: #e0e0e0;
+    --button-border-color: #555555;
+    --link-color: #58a6ff;
+    --header-bg-color: #3a3a3a;
+  }
+}
+/* --- End Color Variables --- */
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  width: 350px;
+  padding: 10px;
+  font-size: 14px;
+}
+
+h1 {
+  font-size: 18px;
+  text-align: center;
+  margin-top: 0;
+}
+
+.folder-selector-container {
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+}
+
+.folder-selector-container label {
+  font-size: 14px; /* Color is inherited from body */
+  margin-right: 5px;
+}
+
+#folderSelector {
+  flex-grow: 1;
+  padding: 4px;
+}
+
+#checkButton {
+  width: 100%;
+  padding: 8px;
+  font-size: 14px;
+  cursor: pointer;
+  background-color: var(--button-bg-color);
+  color: var(--button-text-color);
+  border: 1px solid var(--button-border-color);
+  border-radius: 4px;
+}
+
+#deleteAllButton {
+  width: 100%;
+  padding: 8px;
+  font-size: 14px;
+  cursor: pointer;
+  margin-bottom: 10px;
+}
+
+.danger {
+  background-color: var(--danger-bg-color);
+  color: var(--danger-text-color);
+  border: 1px solid var(--danger-border-color);
+}
+
+.hidden {
+  display: none;
+}
+
+#progress-container {
+  margin-top: 15px;
+  width: 100%;
+  text-align: center;
+}
+
+#progressBar {
+  width: 100%;
+}
+
+#progressLabel {
+  font-size: 12px;
+  color: var(--text-color-secondary);
+}
+
+#results {
+  margin-top: 15px;
+}
+
+#results-list {
+  max-height: 300px; /* 避免列表過長 */
+  overflow-y: auto;
+}
+
+#results-list ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+#results-list li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.bookmark-link {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin-right: 10px;
+  flex-grow: 1; /* 讓連結佔據多餘空間 */
+}
+
+/* --- General link styles --- */
+a {
+  color: var(--link-color);
+  text-decoration: none;
+}
+
+.controls {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0; /* 防止控制按鈕被壓縮 */
+}
+
+.whitelist-btn {
+  font-size: 16px;
+  text-decoration: none;
+  margin-right: 8px;
+  display: flex;
+  align-items: center;
+  color: var(--text-color);
+}
+
+.whitelist-text {
+  font-size: 12px;
+  color: var(--text-color);
+  margin-right: 4px;
+}
+
+.confirmation-text {
+  font-size: 12px;
+  color: var(--text-color-secondary);
+  margin-right: 8px;
+}
+
+.confirm-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  padding: 0 5px;
+  color: var(--link-color);
+}
+
+.delete-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  padding: 0 5px;
+  color: var(--link-color);
+}
+
+.delete-btn:hover {
+  opacity: 0.7;
+}
+
+.settings-container {
+  margin-top: 15px;
+  padding-top: 10px;
+  border-top: 1px solid var(--border-color);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.link-button {
+  background: none;
+  border: none;
+  color: var(--link-color);
+  text-decoration: underline;
+  cursor: pointer;
+  font-size: 12px;
+}

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>書籤檢查器</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>書籤失效檢查器</h1>
+  <div class="folder-selector-container">
+    <label for="folderSelector">選擇資料夾：</label>
+    <select id="folderSelector"></select>
+  </div>
+  <button id="checkButton">開始檢查書籤</button>
+  <div id="progress-container" class="hidden">
+    <progress id="progressBar" value="0" max="100"></progress>
+    <span id="progressLabel"></span>
+  </div>
+  <div id="results">
+    <button id="deleteAllButton" class="hidden danger">全部刪除失效連結</button>
+    <div id="results-list"></div>
+  </div>
+  <div class="settings-container">
+    <input type="checkbox" id="autoCheck" />
+    <label for="autoCheck">每月自動檢查一次</label>
+    <button id="viewWhitelistButton" class="link-button">查看白名單</button>
+  </div>
+  <script src="popup.js"></script>
+</body>
+</html>
