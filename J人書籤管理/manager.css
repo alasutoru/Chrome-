@@ -1,0 +1,421 @@
+:root {
+    /* Light Mode (default) */
+    --bg-color: #f7f8fa;
+    --text-color: #333;
+    --h-color: #111;
+    --secondary-text-color: #6c757d;
+    --card-bg: #fff;
+    --card-border: #e9ecef;
+    --card-shadow: rgba(0,0,0,0.05);
+    --card-hover-shadow: rgba(0,0,0,0.08);
+    --input-bg: #fff;
+    --input-border: #ccc;
+    --input-focus-border: #4c9aff;
+    --input-focus-shadow: rgba(0, 123, 255, 0.25);
+    --primary-btn-bg: #007bff;
+    --primary-btn-text: white;
+    --primary-btn-hover-bg: #0056b3;
+    --secondary-btn-bg: #28a745;
+    --secondary-btn-hover-bg: #218838;
+    --link-color: #0066cc;
+    --tag-bg: #eef5ff;
+    --tag-text: #0066cc;
+    --tag-border: #cce5ff;
+    --notes-bg: #f8f9fa;
+    --notes-border: #007bff;
+    --action-btn-bg: #fff;
+    --action-btn-text: #495057;
+    --action-btn-border: #ced4da;
+    --action-btn-hover-bg: #f8f9fa;
+    --delete-btn-color: #dc3545;
+    --delete-btn-border: #f5c6cb;
+    --delete-btn-hover-bg: #f8d7da;
+}
+
+body.dark-mode {
+    /* Dark Mode Variables */
+    --bg-color: #202124;
+    --text-color: #e8eaed;
+    --h-color: #e8eaed;
+    --secondary-text-color: #bdc1c6;
+    --card-bg: #2c2c2c;
+    --card-border: #444;
+    --card-shadow: rgba(0,0,0,0.2);
+    --card-hover-shadow: rgba(0,0,0,0.3);
+    --input-bg: #333;
+    --input-border: #555;
+    --input-focus-border: #8ab4f8;
+    --input-focus-shadow: rgba(138, 180, 248, 0.3);
+    --primary-btn-bg: #8ab4f8;
+    --primary-btn-text: #202124;
+    --primary-btn-hover-bg: #a6c7ff;
+    --secondary-btn-bg: #57a773;
+    --secondary-btn-hover-bg: #6bc88c;
+    --link-color: #8ab4f8;
+    --tag-bg: #5f6368;
+    --tag-text: #e8eaed;
+    --tag-border: #5f6368;
+    --notes-bg: #333;
+    --notes-border: #8ab4f8;
+    --action-btn-bg: #3c4043;
+    --action-btn-text: #e8eaed;
+    --action-btn-border: #5f6368;
+    --action-btn-hover-bg: #4a4d50;
+    --delete-btn-color: #f28b82;
+    --delete-btn-border: #f28b82;
+    --delete-btn-hover-bg: #5c2b29;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    margin: 0;
+    padding: 20px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    background: transparent;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: none;
+}
+
+h1, h2 {
+    border-bottom: 1px solid #dfe1e6;
+    padding-bottom: 10px;
+    color: var(--h-color);
+}
+
+header {
+    margin-bottom: 20px;
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.add-bookmark-section form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    background: var(--card-bg);
+    padding: 20px;
+    border-radius: 8px;
+    border: 1px solid var(--card-border);
+    margin-bottom: 30px;
+}
+
+.add-bookmark-section input,
+.add-bookmark-section textarea,
+.add-bookmark-section select {
+    padding: 10px;
+    border: 1px solid var(--input-border);
+    border-radius: 4px;
+    font-size: 1em;
+    transition: border-color 0.2s, box-shadow 0.2s;
+    background-color: var(--input-bg);
+    color: var(--text-color);
+}
+
+.add-bookmark-section input:focus,
+.add-bookmark-section textarea:focus,
+.add-bookmark-section select:focus {
+    outline: none;
+    border-color: var(--input-focus-border);
+    box-shadow: 0 0 0 2px var(--input-focus-shadow);
+}
+
+.add-bookmark-section button {
+    padding: 10px 15px;
+    background-color: var(--primary-btn-bg);
+    color: var(--primary-btn-text);
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    align-self: flex-start;
+    transition: background-color 0.2s;
+}
+
+.add-bookmark-section button:hover {
+    background-color: var(--primary-btn-hover-bg);
+}
+
+/* Tag Management Section */
+.tag-management-section {
+    background: var(--card-bg);
+    padding: 20px;
+    border-radius: 8px;
+    border: 1px solid var(--card-border);
+    margin-bottom: 30px;
+    box-shadow: 0 2px 4px var(--card-shadow);
+}
+
+.tag-management-section h2 {
+    margin-top: 0;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #dfe1e6;
+}
+
+.add-tag-form {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.add-tag-form input {
+    flex-grow: 1;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1em;
+    background-color: var(--input-bg);
+    color: var(--text-color);
+}
+
+.add-tag-form input[type="color"] {
+    min-width: 40px;
+    height: 40px;
+    padding: 5px;
+    border: none;
+    cursor: pointer;
+    background: none;
+}
+
+.add-tag-form button {
+    padding: 10px 15px;
+    background-color: var(--secondary-btn-bg);
+    color: var(--primary-btn-text);
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.add-tag-form button:hover {
+    background-color: var(--secondary-btn-hover-bg);
+}
+
+.global-tags-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.global-tag-item {
+    display: flex;
+    align-items: center;
+    background-color: var(--tag-bg);
+    color: var(--tag-text);
+    padding: 4px 8px;
+    border-radius: 12px;
+    font-size: 0.9em;
+    border: 1px solid var(--tag-border);
+}
+
+.global-tag-item .remove-tag-btn {
+    background: none;
+    border: none;
+    color: var(--tag-text);
+    font-size: 1em;
+    margin-left: 5px;
+    cursor: pointer;
+    padding: 0;
+    line-height: 1;
+    opacity: 0.7;
+    transition: opacity 0.2s;
+}
+
+.global-tag-item .remove-tag-btn:hover {
+    opacity: 1;
+    color: var(--delete-btn-color);
+}
+
+/* 書籤列表樣式 */
+#bookmark-list {
+    margin-top: 20px;
+}
+
+.bookmark-item {
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
+    border-radius: 6px;
+    padding: 15px;
+    margin-bottom: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    box-shadow: 0 2px 4px var(--card-shadow);
+    transition: box-shadow 0.2s, transform 0.2s;
+}
+
+.bookmark-item:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px var(--card-hover-shadow);
+}
+
+.bookmark-item .title {
+    font-size: 1.1em;
+    font-weight: 600;
+    color: var(--link-color);
+    text-decoration: none;
+}
+
+.bookmark-item .title:hover {
+    text-decoration: underline;
+}
+
+.bookmark-item .url {
+    font-size: 0.9em;
+    color: var(--secondary-text-color);
+    word-break: break-all;
+}
+
+.bookmark-item .tags span {
+    display: inline-block;
+    background-color: var(--tag-bg);
+    color: var(--tag-text);
+    padding: 2px 8px;
+    border-radius: 10px;
+    font-size: 0.8em;
+    margin-right: 5px;
+}
+
+.bookmark-item .notes {
+    font-size: 0.9em;
+    color: var(--text-color);
+    white-space: pre-wrap;
+    background: var(--notes-bg);
+    padding: 8px;
+    border-radius: 4px;
+    border-left: 3px solid var(--notes-border);
+}
+
+.bookmark-item .actions {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+    align-self: flex-end; /* 將按鈕靠右 */
+}
+
+.bookmark-item .actions button {
+    padding: 5px 10px;
+    border: 1px solid var(--action-btn-border);
+    border-radius: 4px;
+    cursor: pointer;
+    background-color: var(--action-btn-bg);
+    color: var(--action-btn-text);
+    transition: background-color 0.2s, border-color 0.2s;
+}
+
+.bookmark-item .actions button:hover {
+    background-color: var(--action-btn-hover-bg);
+}
+
+.bookmark-item .actions .delete-btn {
+    color: var(--delete-btn-color);
+    border-color: var(--delete-btn-border);
+}
+
+.bookmark-item .actions .delete-btn:hover {
+    background-color: var(--delete-btn-hover-bg);
+    border-color: var(--delete-btn-border);
+}
+
+/* 編輯模式下的輸入框 */
+.bookmark-item input, .bookmark-item textarea {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: var(--input-bg);
+    color: var(--text-color);
+}
+
+/* Tag Checkboxes in Edit Mode */
+.tag-checkboxes {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    padding: 10px;
+    border: 1px solid var(--card-border);
+    border-radius: 4px;
+    background-color: var(--bg-color);
+    margin-bottom: 10px;
+}
+
+.tag-checkboxes label {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    cursor: pointer;
+    font-size: 0.9em;
+    color: var(--text-color);
+}
+
+.tag-checkboxes input[type="checkbox"] {
+    margin: 0;
+    width: 16px;
+    height: 16px;
+    cursor: pointer;
+}
+
+/* Theme Switch */
+.theme-switch-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+.theme-switch {
+    position: relative;
+    display: inline-block;
+    width: 50px;
+    height: 26px;
+}
+.theme-switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: .4s;
+}
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 20px;
+    width: 20px;
+    left: 3px;
+    bottom: 3px;
+    background-color: white;
+    transition: .4s;
+}
+input:checked + .slider {
+    background-color: #8ab4f8;
+}
+input:focus + .slider {
+    box-shadow: 0 0 1px #8ab4f8;
+}
+input:checked + .slider:before {
+    transform: translateX(24px);
+}
+.slider.round {
+    border-radius: 26px;
+}
+
+.slider.round:before {
+    border-radius: 50%;
+}

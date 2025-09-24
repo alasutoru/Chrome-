@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <title>書籤管理中心</title>
+    <link rel="stylesheet" href="manager.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="header-content">
+                <h1>書籤管理中心</h1>
+                <div class="theme-switch-wrapper">
+                    <span>☀️</span>
+                    <label class="theme-switch" for="theme-toggle">
+                        <input type="checkbox" id="theme-toggle" />
+                        <span class="slider round"></span>
+                    </label>
+                    <span>🌙</span>
+                </div>
+            </div>
+            <p>使用快捷鍵 Ctrl+Shift+B (或 Cmd+Shift+B) 來打開此頁面。</p>
+        </header>
+
+        <div class="add-bookmark-section">
+            <h2>新增書籤</h2>
+            <form id="add-bookmark-form">
+                <input type="text" id="bookmark-url" placeholder="書籤網址 (URL)" required>
+                <select id="bookmark-parent-folder">
+                    <option value="1">根目錄</option>
+                    <!-- 資料夾選項將由 JavaScript 動態載入 -->
+                </select>
+                <input type="text" id="bookmark-title" placeholder="標題 (可選)">
+                <input type="text" id="bookmark-tags" placeholder="標籤 (用逗號分隔)">
+                <textarea id="bookmark-notes" placeholder="備註..."></textarea>
+                <button type="submit">新增</button>
+            </form>
+        </div>
+
+        <div class="tag-management-section">
+            <h2>標籤管理</h2>
+            <div class="add-tag-form">
+                <input type="text" id="new-global-tag" placeholder="新增全域標籤">
+                <input type="color" id="new-global-tag-color" value="#4285F4" title="選擇標籤顏色">
+                <button id="add-global-tag-btn">新增標籤</button>
+            </div>
+            <div id="global-tags-list" class="global-tags-list">
+                <!-- 全域標籤將會顯示在這裡 -->
+            </div>
+        </div>
+
+        <div id="bookmark-list-container">
+            <div class="list-header">
+                <h2>我的書籤</h2>
+                <div class="import-export-actions">
+                    <button id="export-bookmarks-button" title="將所有書籤與標籤備份為 CSV 檔案">書籤備份</button>
+                    <button id="import-bookmarks-button" title="從 CSV 檔案匯入書籤">備份匯入</button>
+                    <input type="file" id="import-bookmarks-input" accept=".csv" style="display: none;">
+                </div>
+            </div>
+            <div id="bookmark-list"></div>
+        </div>
+    </div>
+    <script src="manager.js"></script>
+</body>
+</html>
